@@ -252,10 +252,12 @@ Sets the version to install.
 
 query all current users: `$ puppet resource rabbitmq_user`
 
-```
+```puppet
 rabbitmq_user { 'dan':
   admin    => true,
   password => 'bar',
+  user_tags=> 'monitor',
+  provider => 'rabbitmqctl',
 }
 ```
 
